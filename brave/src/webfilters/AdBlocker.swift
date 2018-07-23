@@ -65,7 +65,7 @@ class AdBlocker {
     }
 
     fileprivate func getNetworkLoader(forLocale locale: localeCode, name: String) -> AdblockNetworkDataFileLoader {
-        let dataUrl = URL(string: "https://s3.amazonaws.com/adblock-data/\(AdBlocker.dataVersion)/\(name).dat")!
+        let dataUrl = URL(string: "https://adblock-data.s3.brave.com/\(AdBlocker.dataVersion)/\(name).dat")!
         let dataFile = "abp-data-\(AdBlocker.dataVersion)-\(locale).dat"
         let loader = AdblockNetworkDataFileLoader(url: dataUrl, file: dataFile, localDirName: "abp-data")
         loader.lang = locale
